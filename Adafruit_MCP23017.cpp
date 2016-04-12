@@ -111,6 +111,12 @@ void Adafruit_MCP23017::begin(uint8_t addr) {
 	// all inputs on port A and B
 	writeRegister(MCP23017_IODIRA,0xff);
 	writeRegister(MCP23017_IODIRB,0xff);
+	
+	//disable all interrupts.
+	writeRegister(MCP23017_GPINTENA,0x0);
+	writeRegister(MCP23017_GPINTENB,0x0);
+	
+	
 }
 
 /**
